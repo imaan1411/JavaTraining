@@ -1,6 +1,6 @@
 package ch.css.iman;
 
-public class Seat {
+public class Seat implements Comparable<Seat>{
 
     private final String seatNumber;
     private boolean reserved = false;
@@ -33,4 +33,8 @@ public class Seat {
         return seatNumber;
     }
 
+    @Override
+    public int compareTo(Seat seat) {
+        return this.seatNumber.compareToIgnoreCase(seat.getSeatNumber());
+    }
 }

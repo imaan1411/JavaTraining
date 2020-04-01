@@ -2,8 +2,7 @@ package ch.css.iman;
 
 import com.google.common.annotations.VisibleForTesting;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Theatre {
     private final String theatreName;
@@ -26,21 +25,17 @@ public class Theatre {
     }
 
     public boolean reserveSeat(String seatNumber) {
-        Seat requestSeat = null;
-        for (Seat seat : seats) {
-            if (seat.getSeatNumber().equals(seatNumber)) {
-                requestSeat = seat;
-                break;
-            }
-        }
-
-        if (requestSeat == null) {
+        Seat requestedSeat = new Seat(seatNumber);
+        int foundSeat = Collections.binarySearch(seats, requestedSeat, null);
+        if (foundSeat >= 0) {
+            return seats.get(foundSeat).reserve();
+        } else {
             System.out.println("There is no Seat " + seatNumber);
+            return false;
         }
-        return requestSeat.reserve();
     }
 
-    // for testing
+
     @VisibleForTesting
     public void getSeats() {
         for (Seat seat : seats) {
