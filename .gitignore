@@ -4,6 +4,7 @@
 *.lst
 *.properties
 *.kotlin_module
+*.iml
 
 # Compiled class file
 *.class
