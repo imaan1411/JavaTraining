@@ -4,9 +4,11 @@ public class Seat implements Comparable<Seat>{
 
     private final String seatNumber;
     private boolean reserved = false;
+    private double price;
 
-    public Seat(String seatNumber) {
+    public Seat(String seatNumber, double price) {
         this.seatNumber = seatNumber;
+        this.price = price;
     }
 
     public boolean reserve () {
@@ -36,5 +38,13 @@ public class Seat implements Comparable<Seat>{
     @Override
     public int compareTo(Seat seat) {
         return this.seatNumber.compareToIgnoreCase(seat.getSeatNumber());
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 }
