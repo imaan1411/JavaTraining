@@ -20,6 +20,11 @@ public class MyMap {
         }
         System.out.println(languages.get("Java"));
 
+        if (languages.replace("Lisp", "Therein lies madness", "hello")) {
+            System.out.println("replaced");
+        } else {
+            System.out.println("not");
+        }
 
         for (String key : languages.keySet()) {
             System.out.println(key + ": " + languages.get(key));
