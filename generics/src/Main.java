@@ -16,6 +16,7 @@ public class Main {
         soccerTeam.addPlayer(laurin);
 
         Team<SoccerPlayer> barcelona = new Team<>("Barcelona");
+        barcelona.addPlayer(new SoccerPlayer("hallo"));
         Team<SoccerPlayer> realMadrid = new Team<>("Real Madrid");
 
         barcelona.matchResult(realMadrid, 1, 0);
@@ -30,8 +31,12 @@ public class Main {
         System.out.println(crows.getName() + ": " + crows.ranking());
 
 
-        System.out.println(realMadrid.compareTo(barcelona));
-        System.out.println(barcelona.compareTo(realMadrid));
+        LeagueTable<FootballPlayer, Team<SoccerPlayer>> leagueTable = new LeagueTable<>();
+        leagueTable.addTeam(realMadrid);
+        leagueTable.addTeam(barcelona);
+
+        leagueTable.showLeagueTable();
+
 
     }
 }

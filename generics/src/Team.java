@@ -1,4 +1,6 @@
+import javax.print.attribute.standard.MediaSize;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 
 public class Team<T extends Player> implements Comparable<Team<T>> {
@@ -59,12 +61,6 @@ public class Team<T extends Player> implements Comparable<Team<T>> {
 
     @Override
     public int compareTo(Team<T> team) {
-        if (this.ranking() > team.ranking()) {
-            return -1;
-        } else if (this.ranking() < team.ranking()) {
-            return 1;
-        } else {
-            return 0;
-        }
+        return Integer.compare(team.ranking(), this.ranking());
     }
 }
