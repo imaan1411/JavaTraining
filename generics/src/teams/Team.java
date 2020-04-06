@@ -1,7 +1,6 @@
-import javax.print.attribute.standard.MediaSize;
+package teams;
+
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 
 public class Team<T extends Player> implements Comparable<Team<T>> {
 

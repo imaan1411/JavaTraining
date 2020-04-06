@@ -1,4 +1,4 @@
-import java.util.Collections;
+package teams;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,7 +12,7 @@ public class Main {
         Team<BaseballPlayer> baseballTeam = new Team<>("Chicago Cubs");
         baseballTeam.addPlayer(iman);
 
-        Team<SoccerPlayer> soccerTeam = new Team<>("Soccer Player Team");
+        Team<SoccerPlayer> soccerTeam = new Team<>("Soccer teams.Player teams.Team");
         soccerTeam.addPlayer(laurin);
 
         Team<SoccerPlayer> barcelona = new Team<>("Barcelona");
