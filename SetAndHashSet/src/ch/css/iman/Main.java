@@ -100,5 +100,13 @@ public class Main {
         for(HeavenlyBody b : moons) {
             System.out.println(b.getName());
         }
+
+        HeavenlyBody pluto = new HeavenlyBody("Pluto", 842);
+        planets.add(pluto);
+
+        for (HeavenlyBody b : planets) {
+            System.out.println(b.getName() + ": " + b.getOrbitalPeriod());
+        }
+
     }
 }
