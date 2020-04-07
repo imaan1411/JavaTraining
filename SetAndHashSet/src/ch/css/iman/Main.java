@@ -1,6 +1,5 @@
 package ch.css.iman;
 
-import java.nio.channels.UnresolvedAddressException;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
