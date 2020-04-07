@@ -1,4 +1,4 @@
-package ch.css.iman;
+package ch.css.iman.universe;
 
 import java.util.HashMap;
 import java.util.HashSet;

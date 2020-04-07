@@ -1,4 +1,4 @@
-package ch.css.iman;
+package ch.css.iman.dog;
 
 public class Dog {
     private final String name;
