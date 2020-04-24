@@ -24,12 +24,7 @@ public class Main {
         employees.add(laurin);
         employees.add(mena);
 
-        Collections.sort(employees, new Comparator<Employee>() {
-            @Override
-            public int compare(Employee o1, Employee o2) {
-                return o1.getName().compareTo(o2.getName());
-            }
-        });
+        Collections.sort(employees, (o1, o2) -> o1.getName().compareTo(o2.getName()));
 
         for (Employee e : employees) {
             System.out.println(e.getName());
