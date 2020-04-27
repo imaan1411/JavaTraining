@@ -4,8 +4,10 @@ import ch.css.iman.employees.Employee;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.function.IntPredicate;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 public class Main {
     public static void main(String[] args) {
@@ -30,6 +32,12 @@ public class Main {
 
         IntPredicate intPredicate = value -> value < 10;
         System.out.println(intPredicate.test(9));
+
+        Random random = new Random();
+        Supplier<Integer> randomSupplier = () -> random.nextInt(1000);
+        for (int i = 0; i < 10; i++) {
+            System.out.println(randomSupplier.get());
+        }
 
     }
 
