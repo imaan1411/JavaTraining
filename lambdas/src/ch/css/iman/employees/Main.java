@@ -5,18 +5,19 @@ import ch.css.iman.employees.Employee;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.function.Function;
 import java.util.function.IntPredicate;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 public class Main {
     public static void main(String[] args) {
-        Employee iman = new Employee("Iman", 20);
-        Employee sonja = new Employee("Sonja", 21);
-        Employee laurin = new Employee("Laurin", 19);
-        Employee mena = new Employee("Mena", 19);
-        Employee red = new Employee("Red", 22);
-        Employee charming = new Employee("Charming", 20);
+        Employee iman = new Employee("Iman Lünsmann", 20);
+        Employee sonja = new Employee("Sonja Helfer", 21);
+        Employee laurin = new Employee("Laurin Burach", 19);
+        Employee mena = new Employee("Mena WeissNed", 19);
+        Employee red = new Employee("Red Color", 22);
+        Employee charming = new Employee("Charming Blue", 20);
 
 
         List<Employee> employees = new ArrayList<>();
@@ -38,6 +39,25 @@ public class Main {
         for (int i = 0; i < 10; i++) {
             System.out.println(randomSupplier.get());
         }
+
+        Function<Employee, String> getLastName = employee ->
+                employee.getName().substring(employee.getName().indexOf(" ") + 1);
+
+        Random rand = new Random();
+        for (Employee e : employees) {
+            if (rand.nextBoolean()) {
+                System.out.println(getLastName.apply(e));
+            } else {
+                System.out.println(e.getName());
+            }
+        }
+
+        Function<String, String> toUpperCase = String::toUpperCase;
+
+        System.out.println(getLastName.andThen(toUpperCase).apply(employees.get(0)));
+
+
+
 
     }
 
