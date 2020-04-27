@@ -1,5 +1,6 @@
 package ch.css.iman.streams;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
@@ -29,5 +30,27 @@ public class Main {
                 .distinct()
                 .peek(System.out::println)
                 .count());
+
+
+
+        Employee iman = new Employee("iman", 20);
+        Employee laurin = new Employee("laurin", 20);
+        Employee sonja = new Employee("sonja", 21);
+
+        Department hr = new Department("Human Resources");
+        Department it = new Department("Informatics");
+        it.addEmployee(iman);
+        it.addEmployee(laurin);
+        hr.addEmployee(sonja);
+
+        List<Department> departments = new ArrayList<>();
+        departments.add(hr);
+        departments.add(it);
+
+        departments.stream().flatMap(department -> department.getEmployees().stream())
+                .forEach(System.out::println);
+
+
+
     }
 }
